@@ -1,0 +1,45 @@
+header, footer {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-header);
+    text-align: center;
+}
+footer {
+    min-height: 100px;
+    color: var(--color-text-header-green);
+    font-size: 13px;
+    font-weight: bold;
+}
+header {
+    margin-bottom: 15px;
+}
+header h1 {
+    color: var(--color-text-header-violet);
+}
+header h3 {
+    color: var(--color-text-header-green);
+}
+
+main {
+    width: 100%;
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1880px) {
+    main {
+        width: 80%;
+        margin: 0 auto;
+        border-right: 2px solid var(--color-lightslategrey);
+    }
+}
+@media screen and (min-width: 1801px) {
+    main {
+        width: 55%;
+        margin: 0 auto;
+        border-right: 2px solid var(--color-lightslategrey);
+    }
+}
+

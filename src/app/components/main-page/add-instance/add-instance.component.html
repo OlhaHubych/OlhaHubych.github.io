@@ -1,0 +1,20 @@
+<form [formGroup]="formAddInstance" (ngSubmit)="addInstance(formAddInstance.value)" >
+
+    <fieldset class="form-group">
+        <legend>Add announcement</legend>
+        <div>
+            <label for="titleField">Title<sup>*</sup></label> <br>
+            <input type="text" id="titleField" formControlName="title" [(ngModel)]="title">
+        </div>
+
+        <div>
+            <label for="descriptionField">Description<sup>*</sup></label> <br>
+            <textarea id="descriptionField" formControlName="description" [(ngModel)]="body"></textarea>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Add">
+
+    </fieldset>
+</form>

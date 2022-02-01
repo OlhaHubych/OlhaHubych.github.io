@@ -1,0 +1,52 @@
+<div class="main-column"> 
+
+    <div class="column1">
+        <app-add-instance (addNewInstance) = "addElementData($event)"></app-add-instance>
+    </div>
+
+    <div class="column2">
+
+        <h2>All announcements</h2>
+        <div class="search-box">
+            <label for="searchField">Search announcement by <b>title</b></label>
+            <input type="text" id="searchField" placeholder="Type a title..." [(ngModel)]="search" (input)="searchInstByTitle()">
+        </div>
+
+        <div class="instances-box">
+            <div *ngFor = 'let value of items' class="instance" #instance [attr.id] = "value.id">
+                <div>
+                    <p><b>id:</b> {{ value.id }}</p>
+                    <h3>Title: {{ value.title }} </h3>
+                    <p><b>Description: </b>{{ value.description }} </p>
+                    <p><b>Added:</b> {{ value.datePublished }}</p>
+                </div>
+
+                <div class="control-box">
+
+                    <input type="submit" value="Show similar" (click)="showSimilarInstances(value)">
+                    <input type="submit" value="Delete" (click)="deleteThisInstance(value)">
+                    <input type="submit" value="Edit"  (click)='editThisInstance(value)' [attr.id] = "value.id">
+
+                    <div #showEditFields [hidden]="true" [attr.id] = "value.id" class="edit-box">
+                        <div>
+                            <label for="titleF">Title</label> <br>
+                            <input type="text" [(ngModel)]="titleCopy" [attr.id] = "value.id" id="titleF">
+                        </div>
+                        <div>
+                            <label for="descrF">Description</label><br>
+                            <textarea [(ngModel)]="descriptionCopy" [attr.id] = "value.id" id="descrF"></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Save" (click)="saveChanges(value)">
+                            <input type="submit" value="Close Edit" (click)="closeEdit(value)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

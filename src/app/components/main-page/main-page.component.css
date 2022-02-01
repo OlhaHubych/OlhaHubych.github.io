@@ -1,0 +1,101 @@
+.main-column {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+}
+.column1 {
+    width: 30%;
+}
+.column2 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    border-left: 2px solid var(--color-lightslategrey);
+
+}
+.search-box {
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--color-lightslategrey);
+}
+label {
+    margin-right: 0.5em;
+}
+input[type="text"], textarea {
+    border: 2px solid var(--color-cornflowerblue);
+    border-radius: 0.3em;
+    outline: none;
+}
+textarea {
+    resize: vertical;
+}
+input:focus, textarea:focus {
+    border-color: var(--color-blueviolet);
+}
+input[type="submit"] {
+    border-radius: 0.3em;
+    border-color: var(--color-text-header-violet);
+    background-color: var(--color-text-header-violet);
+    color: white;
+    width: 20%;
+}
+
+.instances-box {
+    width: 100%;
+    height: 800px;
+    overflow-y: scroll;
+}
+.instance {
+    border-bottom: 2px solid var(--color-lightsteelblue);
+    padding: 10px;
+}
+.instance:last-child {
+    border-bottom: none;
+}
+
+.control-box input[type="submit"]{
+    margin-right: 0.5em;
+}
+.edit-box {
+    margin: 16px;
+    padding: 10px;
+    background-color: var(--color-lightsteelblue);
+    border-radius: 0.3em;
+}
+.edit-box input[type="text"], textarea {
+    width: 100%;
+}
+.edit-box input[type="submit"] {
+    background-color: var(--color-text-header-green);
+    border-color: var(--color-text-header-green);   
+}
+
+@media screen and (max-width: 900px) {
+    .main-column {
+        flex-direction: column;
+    }
+    .column1 {
+        width: 100%;
+    }
+    .column2 {
+        width: 100%;
+        border-left: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    input[type="submit"] {
+        width: 31%;
+    }
+}
+@media screen and (min-width:426px) and (max-width: 901px) {
+    .column1 {
+        width: 80%;
+        align-self: center;
+    }
+    input[type="submit"] {
+        width: 22%;
+    }
+}

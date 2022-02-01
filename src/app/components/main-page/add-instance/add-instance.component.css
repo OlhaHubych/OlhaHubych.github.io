@@ -1,0 +1,51 @@
+form {
+    margin-top: 19px;
+}
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 0.5em;
+    color: var(--color-main-black);
+    background-color: var(--bg-color-main-white);
+}
+fieldset legend {
+    background-color: var(--bg-color-main-pink);
+    border-radius: 0.5em;
+    color: var(--color-main-violet);
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 5px rgba(114,95,167,0.46);
+    padding: 3px 10px;
+}
+input[type="text"], textarea {
+    width: 100%;
+    border: 2px solid var(--color-cornflowerblue);
+    border-radius: 0.3em;
+    outline: none;
+}
+textarea {
+    resize: vertical;
+}
+input:focus, textarea:focus {
+    border-color: var(--color-blueviolet);
+}
+input[type="submit"] {
+    width: 25%;
+    align-self: center;
+    border-radius: 0.3em;
+    border-color: var(--color-text-header-violet);
+    background-color: var(--color-text-header-violet);
+    color: var(--color-white);
+}
+
+@media screen and (max-width: 425px) {
+    input[type="submit"] {
+        width: 31%;
+    }
+}
+@media screen and (min-width:426px) and (max-width: 768px) {
+    input[type="submit"] {
+        width: 22%;
+    }
+}
+    
